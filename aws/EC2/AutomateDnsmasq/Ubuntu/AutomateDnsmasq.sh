@@ -35,8 +35,8 @@ fi
 apt install -y dnsmasq
 
 # Create the required User and Group
-groupadd -r dnsmasq
-useradd -r -g dnsmasq dnsmasq
+#groupadd -r dnsmasq
+#useradd -r -g dnsmasq dnsmasq
 
 # Set dnsmasq.conf configuration
 cat << EOF > /etc/dnsmasq.conf
@@ -45,8 +45,8 @@ listen-address=127.0.0.1
 port=53
 bind-interfaces
 user=dnsmasq
-group=dnsmasq
-pid-file=/var/run/dnsmasq.pid
+group=nogroup
+pid-file=/var/run/dnsmasq/dnsmasq.pid
 # Name resolution options
 resolv-file=/etc/resolv.dnsmasq
 cache-size=500
